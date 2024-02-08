@@ -311,6 +311,9 @@ college_recent_grads %>%
 
 8.  Which STEM majors have median salaries equal to or less than the median for all majors' median earnings? Your output should only show the major name and median, 25th percentile, and 75th percentile earning for that major as and should be sorted such that the major with the highest median earning is on top.
 
+1.Geosciences, 2.Environmental Science, 3.Multi-Disciplinary Or General Science, 4.Physiology, 5.Communication Technologies, 6.Neuroscience, 7.Atmospheric Sciences And Meteorology, 8.Miscellaneous Biology, 9.Biology, 10.Ecology, 11.Zoology.
+These all have salaries equal to or less then the median salary of all the majors.
+
 🧶 ✅ ⬆️ Knit, *commit, and push your changes to GitHub with an appropriate commit message. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.*
 
 ## What types of majors do women tend to major in?

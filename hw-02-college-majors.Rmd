@@ -141,6 +141,15 @@ college_recent_grads %>%
 
 1.  Using what you've learned so far, arrange the data in descending order with respect to proportion of women in a major, and display only the major, the total number of people with major, and proportion of women. Show only the top 3 majors by adding `top_n(3)` at the end of the pipeline.
 
+The top three majors are early childhood education, communication disorders sciences and services, and medical assisting services.
+
+```         
+college_recent_grads %>%
+  arrange(desc(sharewomen)) %>%
+  select(rank, major, sharewomen) %>%
+  top_n(3)
+```
+
 ## How do the distributions of median income compare across major categories?
 
 ```{marginfigure}
@@ -151,6 +160,9 @@ There are three types of incomes reported in this data frame: `p25th`, `median`,
 These correspond to the 25th, 50th, and 75th percentiles of the income distribution of sampled individuals for a given major.
 
 2.  Why do we often choose the median, rather than the mean, to describe the typical income of a group of people?
+
+The median is a more accurate measurement than the mean.
+This makes more sense cause it is not impacted by any extremes.
 
 The question we want to answer "How do the distributions of median income compare across major categories?".
 We need to do a few things to answer this question: First, we need to group the data by `major_category`.
@@ -180,6 +192,13 @@ You might ask yourself: "What would be a meaningful difference in median incomes
 
 3.  Try binwidths of \$1000 and \$5000 and choose one. Explain your reasoning for your choice. Note that the binwidth is an argument for the `geom_histogram` function. So to specify a binwidth of \$1000, you would use `geom_histogram(binwidth = 1000)`.
 
+I choose binwidth 5,000 because of the better label of the x-axis
+
+```         
+ggplot(data = college_recent_grads, mapping = aes(x = median)) +
+    geom_histogram(binwidth = 5000)
+```
+
 We can also calculate summary statistics for this distribution using the `summarise` function:
 
 ```{r}
@@ -194,12 +213,34 @@ college_recent_grads %>%
 4.  Based on the shape of the histogram you created in the previous exercise, determine which of these summary statistics is useful for describing the distribution.
     Write up your description (remember shape, center, spread, any unusual observations) and include the summary statistic output as well.
 
-5.  Plot the distribution of `median` income using a histogram, faceted by `major_category`.
+Shape would be the the best way to describe the distribution.
+The spread is pretty normal with one outstanding outlier.
+It hits it's peak about half way through but has more information on the right side.
+Most people have an income of around 40,000 dollars.
+
+4.  Plot the distribution of `median` income using a histogram, faceted by `major_category`.
     Use the `binwidth` you chose in the earlier exercise.
+
+```         
+ggplot(college_recent_grads, aes(x = median)) +
+  geom_histogram(binwidth = 5000) +
+  facet_wrap(~ major_category)
+```
+
+![](https://bdd51dbdb4a94ef0b2cf86ea3f083340.app.posit.cloud/graphics/64a1e2c9-40ca-4dd1-80f5-c255e7bf0f54.png)
 
 Now that we've seen the shapes of the distributions of median incomes for each major category, we should have a better idea for which summary statistic to use to quantify the typical median income.
 
 6.  Which major category has the highest typical (you'll need to decide what this means) median income? Use the partial code below, filling it in with the appropriate statistic and function. Also note that we are looking for the highest statistic, so make sure to arrange in the correct direction.
+
+Engineering is the highest median income.
+
+```         
+college_recent_grads %>%
+  group_by(major_category) %>%
+  summarise(rich = median(median)) %>%
+  arrange(desc(rich))
+```
 
 ```{r eval=FALSE}
 college_recent_grads %>%
@@ -209,6 +250,8 @@ college_recent_grads %>%
 ```
 
 7.  Which major category is the least popular in this sample? To answer this question we use a new function called `count`, which first groups the data and then counts the number of observations in each category (see below). Add to the pipeline appropriately to arrange the results so that the major with the lowest observations is on top.
+
+The least popular major is interdisciplinary with 1 observation.
 
 ```{r}
 college_recent_grads %>%

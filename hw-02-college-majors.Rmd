@@ -314,14 +314,68 @@ college_recent_grads %>%
 1.Geosciences, 2.Environmental Science, 3.Multi-Disciplinary Or General Science, 4.Physiology, 5.Communication Technologies, 6.Neuroscience, 7.Atmospheric Sciences And Meteorology, 8.Miscellaneous Biology, 9.Biology, 10.Ecology, 11.Zoology.
 These all have salaries equal to or less then the median salary of all the majors.
 
+```         
+ 1 Geosciences                            36000
+ 2 Environmental Science                  35600
+ 3 Multi-Disciplinary Or General Science  35000
+ 4 Physiology                             35000
+ 5 Communication Technologies             35000
+ 6 Neuroscience                           35000
+ 7 Atmospheric Sciences And Meteorology   35000
+ 8 Miscellaneous Biology                  33500
+ 9 Biology                                33400
+10 Ecology                                33000
+11 Zoology                                26000
+```
+
 🧶 ✅ ⬆️ Knit, *commit, and push your changes to GitHub with an appropriate commit message. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.*
 
 ## What types of majors do women tend to major in?
 
 9.  Create a scatterplot of median income vs. proportion of women in that major, coloured by whether the major is in a STEM field or not. Describe the association between these three variables.
 
+This shows that more women are in no stem majors than in stem majors.
+This also shows that they usually end up in more high income jobs than not.
+
+![](https://bdd51dbdb4a94ef0b2cf86ea3f083340.app.posit.cloud/graphics/5d4c4926-bef5-4f8c-bc3b-fc124eb948e1.png)
+
 ## Further exploration
 
 10. Ask a question of interest to you, and answer it using summary statistic(s) and/or visualization(s).
 
-🧶 ✅ ⬆️ Knit, *commit, and push your changes to GitHub with an appropriate commit message. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards and review the md document on GitHub to make sure you're happy with the final state of your work.*
+Most common major that women go into?
+
+The most common major for women to go into is engineering with 57,000
+
++----------------------------------------------+
+| ```                                          |
+|  Engineering                         57000   |
+|  2 Computers & Mathematics             45000 |
+|  3 Business                            40000 |
+|  4 Physical Sciences                   39500 |
+|  5 Social Science                      38000 |
+|  6 Biology & Life Science              36300 |
+|  7 Law & Public Policy                 36000 |
+|  8 Agriculture & Natural Resources     35000 |
+|  9 Communications & Journalism         35000 |
+| 10 Health                              35000 |
+| 11 Industrial Arts & Consumer Services 35000 |
+| 12 Interdisciplinary                   35000 |
+| 13 Education                           32750 |
+| 14 Humanities & Liberal Arts           32000 |
+| 15 Arts                                30750 |
+| 16 Psychology & Social Work            30000 |
+| ```                                          |
++----------------------------------------------+
+|                                              |
++----------------------------------------------+
+| |     |                                      |
+| |-----|                                      |
+| | \>  |                                      |
++----------------------------------------------+
+
+|     |
+|-----|
+| \>  |
+
+nit, *commit, and push your changes to GitHub with an appropriate commit message. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards and review the md document on GitHub to make sure you're happy with the final state of your work.*

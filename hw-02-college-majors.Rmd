@@ -1,11 +1,15 @@
 ---
 title: "HW 04 - What should I major in?"
+author: "Rachael Smith"
 output: 
   tufte::tufte_html:
     css: ../hw.css
     tufte_variant: "envisioned"
     highlight: pygments
 link-citations: true
+editor_options: 
+  markdown: 
+    wrap: sentence
 ---
 
 ```{r include = FALSE}
@@ -32,8 +36,6 @@ We should also note that there are many considerations that go into picking a ma
 Earnings potential and employment prospects are two of them, and they are important, but they don't tell the whole story.
 Keep this in mind as you analyze the data.
 
-
-
 ## Warm up
 
 Before we introduce the data, let's warm up with some simple exercises.
@@ -46,7 +48,8 @@ Before we introduce the data, let's warm up with some simple exercises.
 ## Packages
 
 We'll use the **tidyverse** package for much of the data wrangling and visualisation, the **scales** package for better formatting of labels on visualisations, and the data lives in the **fivethirtyeight** package.
-You will notice that when you go to knit that the packages have not been installed. You can install them manually or click yes when R asks you. 
+You will notice that when you go to knit that the packages have not been installed.
+You can install them manually or click yes when R asks you.
 
 You can load them by running the following in your Console:
 
@@ -167,7 +170,9 @@ ggplot(data = college_recent_grads, mapping = aes(x = median)) +
 
 Along with the plot, we get a message:
 
-    `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+```         
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+```
 
 This is telling us that we might want to reconsider the binwidth we chose for our histogram -- or more accurately, the binwidth we didn't specify.
 It's good practice to always think in the context of the data and try out a few binwidths before settling on a binwidth.
